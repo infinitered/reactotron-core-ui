@@ -19,7 +19,10 @@
     "lint": "eslint src --ext .ts,.tsx",
     "tsc": "tsc",
     "compile": "NODE_ENV=production rollup -c",
-    "compile:dev": "NODE_ENV=development rollup -c"
+    "compile:dev": "NODE_ENV=development rollup -c",
+    "ci:lint": "yarn lint",
+    "ci:test": "yarn test",
+    "ci:publish": "yarn semantic-release"
   },
   "peerDependencies": {
     "date-fns": "^2.4.1",
