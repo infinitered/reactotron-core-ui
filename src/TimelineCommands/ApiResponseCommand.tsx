@@ -28,10 +28,10 @@ interface Props {
     payload: {
       duration: number
       request: {
-        data: any //? ¯\_(ツ)_/¯
+        data: any // ¯\_(ツ)_/¯
         headers: { [key: string]: string }
         method: string
-        params: any //? ¯\_(ツ)_/¯
+        params: any // ¯\_(ツ)_/¯
         url: string
       }
       response: {
