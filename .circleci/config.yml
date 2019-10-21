@@ -44,7 +44,7 @@ jobs:
           command: yarn ci:lint
       - run:
           name: Visual Tests
-          command:
+          command: |
               if [ "${CIRCLE_BRANCH}" != "master" ];
               then
                 yarn chromatic
