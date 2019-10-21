@@ -89,7 +89,7 @@ function buildToolbar(commandPayload, copyToClipboard: (text: string) => void) {
     tip: "Copy JSON response to clipboard",
   })
 
-  if (!!commandPayload.request.data) {
+  if (commandPayload.request.data) {
     // Is requestBody not empty
     toolbarItems.push({
       icon: MdCallMade,

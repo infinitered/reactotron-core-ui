@@ -9,7 +9,7 @@ export function apiRequestToCurl (payload: any = {}) {
     output.push(`curl -X ${method} `)
   }
 
-  for (let header in headers) {
+  for (const header in headers) {
     output.push(` -H "${header}:${headers[header]}"`)
   }
 
