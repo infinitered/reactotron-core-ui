@@ -45,7 +45,7 @@ jobs:
       - run:
           name: Visual Tests
           command: |
-              if [ "${CIRCLE_BRANCH}" != "master" ];
+              if [ "${CIRCLE_BRANCH}" != "master" ] && [ "${CIRCLE_BRANCH}" != "beta" ];
               then
                 yarn chromatic
               else
