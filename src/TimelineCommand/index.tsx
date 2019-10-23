@@ -130,9 +130,11 @@ const TimelineCommand: FunctionComponent<Props> = ({
         </TimestampContainer>
         <TitleContainer>
           <TitleText isImportant={isImportant}>
-            <TagContainer>
-              <TagIcon size={16} />
-            </TagContainer>
+            {isTagged && (
+              <TagContainer>
+                <TagIcon size={16} />
+              </TagContainer>
+            )}
             {title}
           </TitleText>
         </TitleContainer>
