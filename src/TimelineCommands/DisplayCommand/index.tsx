@@ -70,6 +70,7 @@ const DisplayCommand: FunctionComponent<Props> = ({
       preview={payload.name}
       toolbar={toolbar}
       isImportant={payload.important}
+      isTagged
       isOpen={isOpen}
       setIsOpen={setIsOpen}
     >
