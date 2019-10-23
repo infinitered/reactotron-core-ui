@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react"
 import styled from "styled-components"
+import { MdContentCopy } from "react-icons/md"
 
 import TimelineCommand from "../../TimelineCommand"
 import { TimelineCommandProps, buildTimelineCommand } from "../BaseCommand"
@@ -22,7 +23,32 @@ interface DisplayPayload {
 
 interface Props extends TimelineCommandProps<DisplayPayload> {}
 
-const DisplayCommand: FunctionComponent<Props> = ({ command, isOpen, setIsOpen }) => {
+function buildToolbar(commandPayload, copyToClipboard: (text: string) => void) {
+  return [
+    {
+      icon: MdContentCopy,
+      onClick: () => {
+        const message = commandPayload.value
+
+        if (!message) return
+
+        if (typeof message === "string") {
+          copyToClipboard(message)
+        } else {
+          copyToClipboard(JSON.stringify(message, null, 2))
+        }
+      },
+      tip: "Copy text to clipboard",
+    },
+  ]
+}
+
+const DisplayCommand: FunctionComponent<Props> = ({
+  command,
+  isOpen,
+  setIsOpen,
+  copyToClipboard,
+}) => {
   const { payload, date, deltaTime } = command
 
   let imageUrl
@@ -34,12 +60,15 @@ const DisplayCommand: FunctionComponent<Props> = ({ command, isOpen, setIsOpen }
     }
   }
 
+  const toolbar = buildToolbar(payload, copyToClipboard)
+
   return (
     <TimelineCommand
       date={date}
       deltaTime={deltaTime}
       title={payload.name || "DISPLAY"}
       preview={payload.name}
+      toolbar={toolbar}
       isImportant={payload.important}
       isOpen={isOpen}
       setIsOpen={setIsOpen}
