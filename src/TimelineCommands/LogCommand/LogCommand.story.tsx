@@ -6,7 +6,7 @@ export default {
   title: "Timeline Commands/Log Command",
 }
 
-declare var __dirname: string
+declare const __dirname: string
 
 function buildCommand(payload: { level: any; message: any; stack?: any }, important?: boolean) {
   return {

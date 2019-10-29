@@ -269,7 +269,7 @@ function renderStackFrame(stackFrame, idx) {
   // TODO: Handle open in editor!!!!!!!!!!!!! (How?)
   let fileName = stackFrame.fileName || ""
   let functionName = stackFrame.functionName || ""
-  let lineNumber = stackFrame.lineNumber || 0
+  const lineNumber = stackFrame.lineNumber || 0
 
   const fileNameLastSlash = fileName.lastIndexOf("/") + 1
   const justTheFile = fileNameLastSlash > -1 ? fileName.substr(fileNameLastSlash) : fileName
