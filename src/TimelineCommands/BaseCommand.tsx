@@ -13,7 +13,8 @@ export interface TimelineCommandProps<T> {
     payload: T
     type: string
   }
-  copyToClipboard: (text: string) => void
+  copyToClipboard?: (text: string) => void
+  readFile?: (path: string) => void
 }
 
 export function buildTimelineCommand<T>(Component: FunctionComponent<TimelineCommandProps<T>>) {
