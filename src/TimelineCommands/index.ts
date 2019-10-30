@@ -9,7 +9,7 @@ import ImageCommand from "./ImageCommand"
 import LogCommand from "./LogCommand"
 import SagaTaskCompleteCommand from "./SagaTaskCompleteCommand"
 import StateActionCompleteCommand from "./StateActionCompleteCommand"
-import { TimelineCommandProps } from "./BaseCommand"
+import { TimelineCommandPropsEx } from "./BaseCommand"
 
 enum CommandTypes {
   ApiResponse = "api.response",
@@ -23,7 +23,7 @@ enum CommandTypes {
   StateActionComplete = "state.action.complete",
 }
 
-function timelineCommandResolver(type: CommandTypes): FunctionComponent<TimelineCommandProps<any>> {
+function timelineCommandResolver(type: CommandTypes): FunctionComponent<TimelineCommandPropsEx<any>> {
   switch (type) {
     case CommandTypes.ApiResponse:
       return ApiResponseCommand

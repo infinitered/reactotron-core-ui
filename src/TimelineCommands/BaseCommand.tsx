@@ -1,8 +1,6 @@
 import React, { FunctionComponent, useState } from "react"
 
-export interface TimelineCommandProps<T> {
-  isOpen: boolean
-  setIsOpen: (isOpen: boolean) => void
+export interface TimelineCommandPropsEx<T> {
   command: {
     clientId: string
     connectionId: number
@@ -17,8 +15,13 @@ export interface TimelineCommandProps<T> {
   readFile?: (path: string) => void
 }
 
+export interface TimelineCommandProps<T> extends TimelineCommandPropsEx<T> {
+  isOpen: boolean
+  setIsOpen: (isOpen: boolean) => void
+}
+
 export function buildTimelineCommand<T>(Component: FunctionComponent<TimelineCommandProps<T>>) {
-  return (props: TimelineCommandProps<T>) => {
+  return (props: TimelineCommandPropsEx<T>) => {
     const [isOpen, setIsOpen] = useState(false)
 
     return <Component {...props} isOpen={isOpen} setIsOpen={setIsOpen} />
