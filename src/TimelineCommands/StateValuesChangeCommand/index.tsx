@@ -20,7 +20,7 @@ const StateValuesChangeCommand: FunctionComponent<Props> = ({ command, isOpen, s
   const hasAdded = !!payload.added && !Array.isArray(payload.added)
   const hasRemoved = !!payload.removed && !Array.isArray(payload.removed)
 
-  let changes = []
+  const changes = []
 
   if (hasChanged) {
     changes.push(`${Object.keys(payload.changed).length} changed`)
@@ -48,9 +48,9 @@ const StateValuesChangeCommand: FunctionComponent<Props> = ({ command, isOpen, s
       isOpen={isOpen}
       setIsOpen={setIsOpen}
     >
-      {hasChanged && <ContentView value={{ changed: payload.changed["null"] }} />}
-      {hasAdded && <ContentView value={{ "+ added": payload.added["null"] }} />}
-      {hasRemoved && <ContentView value={{ "- removed": payload.removed["null"] }} />}
+      {hasChanged && <ContentView value={{ changed: payload.changed.null }} />}
+      {hasAdded && <ContentView value={{ "+ added": payload.added.null }} />}
+      {hasRemoved && <ContentView value={{ "- removed": payload.removed.null }} />}
     </TimelineCommand>
   )
 }
