@@ -25,7 +25,7 @@ enum CommandTypes {
   SagaTaskComplete = "saga.task.complete",
   StateActionComplete = "state.action.complete",
   StateKeysResponse = "state.keys.response",
-  StateValuesChange = "state.values.response",
+  StateValuesChange = "state.values.change",
   StateValuesResponse = "state.values.response",
 }
 

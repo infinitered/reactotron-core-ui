@@ -30,23 +30,35 @@ interface StateKeysResponsePayload {
 
 interface Props extends TimelineCommandProps<StateKeysResponsePayload> {}
 
-function renderKeys(keys: string[]) {
+function buildClickHandler(key: string, currentPath: string, sendCommand: (command: any) => void) {
+  return () => {
+    sendCommand({
+      type: "state.values.request",
+      payload: { path: `${currentPath ? `${currentPath}.` : ""}${key}` },
+    })
+  }
+}
+
+function renderKeys(keys: string[], currentPath: string, sendCommand: (command: any) => void) {
   if (!keys) return <KeysContainer>¯\_(ツ)_/¯</KeysContainer>
   if (keys.length === 0) return <KeysContainer>Sorry, no keys in there.</KeysContainer>
 
   return (
     <KeysContainer>
       {keys.map(key => {
-        return <Key>{key}</Key>
+        return <Key onClick={buildClickHandler(key, currentPath, sendCommand)}>{key}</Key>
       })}
     </KeysContainer>
   )
 }
 
-const StateKeysResponseCommand: FunctionComponent<Props> = ({ command, isOpen, setIsOpen }) => {
+const StateKeysResponseCommand: FunctionComponent<Props> = ({
+  command,
+  isOpen,
+  setIsOpen,
+  sendCommand,
+}) => {
   const { payload, date, deltaTime } = command
-
-  // TODO: Handle clicking a key!
 
   return (
     <TimelineCommand
@@ -58,7 +70,7 @@ const StateKeysResponseCommand: FunctionComponent<Props> = ({ command, isOpen, s
       setIsOpen={setIsOpen}
     >
       <PathLabel>{payload.path || "(root)"}</PathLabel>
-      {renderKeys(payload.keys)}
+      {renderKeys(payload.keys, payload.path, sendCommand)}
     </TimelineCommand>
   )
 }

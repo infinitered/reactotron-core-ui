@@ -13,6 +13,7 @@ export interface TimelineCommandPropsEx<T> {
   }
   copyToClipboard?: (text: string) => void
   readFile?: (path: string) => void
+  sendCommand?: (command: any) => void
 }
 
 export interface TimelineCommandProps<T> extends TimelineCommandPropsEx<T> {
@@ -20,7 +21,10 @@ export interface TimelineCommandProps<T> extends TimelineCommandPropsEx<T> {
   setIsOpen: (isOpen: boolean) => void
 }
 
-export function buildTimelineCommand<T>(Component: FunctionComponent<TimelineCommandProps<T>>, startOpen = false) {
+export function buildTimelineCommand<T>(
+  Component: FunctionComponent<TimelineCommandProps<T>>,
+  startOpen = false
+) {
   return (props: TimelineCommandPropsEx<T>) => {
     const [isOpen, setIsOpen] = useState(startOpen)
 
