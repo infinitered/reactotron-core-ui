@@ -4,6 +4,7 @@ import theme from "./theme"
 // Components
 import ContentView from "./ContentView"
 import Header from "./Header"
+import Modal from "./Modal"
 import ActionButton from "./ActionButton"
 import TimelineCommand from "./TimelineCommand"
 import timelineCommandResolver from "./TimelineCommands"
@@ -19,6 +20,7 @@ export {
   theme,
   ContentView,
   Header,
+  Modal,
   ActionButton,
   TimelineCommand,
   timelineCommandResolver,
