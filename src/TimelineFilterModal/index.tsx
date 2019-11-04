@@ -3,34 +3,35 @@ import styled from "styled-components"
 
 import Modal from "../Modal"
 import Checkbox from "../Checkbox"
+import { CommandType } from "../types"
 
 const GROUPS = [
   {
     name: "Informational",
     items: [
-      { value: "log", text: "Log" },
-      { value: "image", text: "Image" },
-      { value: "display", text: "Custom Display" },
+      { value: CommandType.Log, text: "Log" },
+      { value: CommandType.Image, text: "Image" },
+      { value: CommandType.Display, text: "Custom Display" },
     ],
   },
   {
     name: "General",
     items: [
-      { value: "client.intro", text: "Connection" },
-      { value: "benchmark.report", text: "Benchmark" },
-      { value: "api.response", text: "API" },
+      { value: CommandType.ClientIntro, text: "Connection" },
+      { value: CommandType.Benchmark, text: "Benchmark" },
+      { value: CommandType.ApiResponse, text: "API" },
     ],
   },
   {
     name: "Async Storage",
-    items: [{ value: "asyncStorage.mutation", text: "Mutations" }],
+    items: [{ value: CommandType.AsyncStorageMutation, text: "Mutations" }],
   },
   {
     name: "State & Sagas",
     items: [
-      { value: "state.action.complete", text: "Action" },
-      { value: "saga.task.complete", text: "Saga" },
-      { value: "state.values.change", text: "Subscription Changed" },
+      { value: CommandType.StateActionComplete, text: "Action" },
+      { value: CommandType.SagaTaskComplete, text: "Saga" },
+      { value: CommandType.StateValuesChange, text: "Subscription Changed" },
     ],
   },
 ]
@@ -54,21 +55,54 @@ const GroupName = styled.div`
 interface Props {
   isOpen: boolean
   onClose: () => void
+  hiddenCommands: CommandType[]
+  setHiddenCommands: (hiddenCommands: CommandType[]) => void
 }
 
-const TimelineFilterModal: FunctionComponent<Props> = ({ isOpen, onClose }) => {
+const TimelineFilterModal: FunctionComponent<Props> = ({
+  isOpen,
+  onClose,
+  hiddenCommands,
+  setHiddenCommands,
+}) => {
+  const toggleAllOn = () => {
+    // To turn everything on we need the list to be empty.
+    setHiddenCommands([])
+  }
+
+  const toggleAllOff = () => {
+    // To turn everything off we need the list to have all options.
+    setHiddenCommands(
+      GROUPS.reduce((itms, g) => {
+        return [...itms, ...g.items.map(i => i.value)]
+      }, [])
+    )
+  }
+
+  const buildCheckboxToggle = (value: CommandType) => {
+    const isSelected = hiddenCommands.indexOf(value) === -1
+
+    return () => {
+      if (isSelected) {
+        setHiddenCommands([...hiddenCommands, value])
+      } else {
+        setHiddenCommands([...hiddenCommands.filter(f => f !== value)])
+      }
+    }
+  }
+
   return (
     <Modal title="Timeline Filter" isOpen={isOpen} onClose={onClose}>
       <BulkActionContainer>
-        <BulkAction>Check all</BulkAction>
+        <BulkAction onClick={toggleAllOn}>Check all</BulkAction>
         <span> / </span>
-        <BulkAction>Uncheck all</BulkAction>
+        <BulkAction onClick={toggleAllOff}>Uncheck all</BulkAction>
       </BulkActionContainer>
       <div>
         {GROUPS.map((section, sectionIdx) => {
           const options = section.items.map((item, itemIdx) => {
-            const isChecked = true
-            const onToggle = () => {}
+            const isChecked = hiddenCommands.indexOf(item.value) === -1
+            const onToggle = buildCheckboxToggle(item.value)
 
             return (
               <Checkbox key={itemIdx} label={item.text} onToggle={onToggle} isChecked={isChecked} />
