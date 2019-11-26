@@ -28,7 +28,7 @@ const StateActionCompleteCommand: FunctionComponent<Props> = ({
 }) => {
   const { payload, date, deltaTime } = command
 
-  let toolbar = []
+  const toolbar = []
 
   if (dispatchAction) {
     toolbar.push({
