@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react"
 
-import TimelineCommand from "../../TimelineCommand"
+import TimelineCommand from "../../components/TimelineCommand"
 import makeTable from "../../utils/makeTable"
 import { TimelineCommandProps, buildTimelineCommand } from "../BaseCommand"
 

@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useRef, useState, useCallback } from "react"
 import styled from "styled-components"
 
-import Modal, { KeystrokeContainer, Keystroke } from "../Modal"
+import Modal, { KeystrokeContainer, Keystroke } from "../../components/Modal"
 
 const InstructionText = styled.div`
   text-align: left;

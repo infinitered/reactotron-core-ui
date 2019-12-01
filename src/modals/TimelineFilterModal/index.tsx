@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from "react"
 import styled from "styled-components"
 
-import Modal from "../Modal"
-import Checkbox from "../Checkbox"
-import { CommandType } from "../types"
+import Modal from "../../components/Modal"
+import Checkbox from "../../components/Checkbox"
+import { CommandType } from "../../types"
 
 const GROUPS = [
   {

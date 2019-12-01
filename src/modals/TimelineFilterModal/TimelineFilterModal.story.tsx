@@ -1,7 +1,7 @@
 import React from "react"
 
 import TimelineFilterModal from "./index"
-import { CommandType } from "../types"
+import { CommandType } from "../../types"
 
 export default {
   title: "Timeline Filter Modal",

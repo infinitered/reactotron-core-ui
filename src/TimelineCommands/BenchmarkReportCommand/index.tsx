@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react"
 import styled from "styled-components"
 
-import TimelineCommand from "../../TimelineCommand"
+import TimelineCommand from "../../components/TimelineCommand"
 import { TimelineCommandProps, buildTimelineCommand } from "../BaseCommand"
 
 const NameContainer = styled.div`

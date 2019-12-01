@@ -2,9 +2,9 @@ import React, { FunctionComponent } from "react"
 import styled from "styled-components"
 import { MdContentCopy } from "react-icons/md"
 
-import TimelineCommand from "../../TimelineCommand"
+import TimelineCommand from "../../components/TimelineCommand"
+import ContentView from "../../components/ContentView"
 import { TimelineCommandProps, buildTimelineCommand } from "../BaseCommand"
-import ContentView from "../../ContentView"
 
 const ImageContainer = styled.div``
 

@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from "react"
 
-import TimelineCommand from "../../TimelineCommand"
+import TimelineCommand from "../../components/TimelineCommand"
+import ContentView from "../../components/ContentView"
 import { TimelineCommandProps, buildTimelineCommand } from "../BaseCommand"
-import ContentView from "../../ContentView"
 
 interface StateValuesChangePayload {
   added: any

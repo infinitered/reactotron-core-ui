@@ -2,7 +2,7 @@ import React from "react"
 import JSONTree from "react-json-tree"
 import styled from "styled-components"
 
-import baseTheme from "../theme"
+import baseTheme from "../../theme"
 
 // TODO: Ripping this right from reactotron right now... should probably be better.
 const theme = {

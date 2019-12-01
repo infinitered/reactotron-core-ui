@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import makeTable from "../utils/makeTable"
-import isShallow from "../utils/isShallow"
+import makeTable from "../../utils/makeTable"
+import isShallow from "../../utils/isShallow"
 import TreeView from "../TreeView"
 
 const NullContainer = styled.div`

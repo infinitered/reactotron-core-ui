@@ -3,8 +3,8 @@ import styled from "styled-components"
 import { MdRepeat, MdCode } from "react-icons/md"
 import stringifyObject from "stringify-object"
 
-import TimelineCommand from "../../TimelineCommand"
-import ContentView from "../../ContentView"
+import TimelineCommand from "../../components/TimelineCommand"
+import ContentView from "../../components/ContentView"
 import { TimelineCommandProps, buildTimelineCommand } from "../BaseCommand"
 
 const NameContainer = styled.div`

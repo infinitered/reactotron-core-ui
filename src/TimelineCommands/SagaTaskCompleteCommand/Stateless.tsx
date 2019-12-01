@@ -7,9 +7,9 @@ import {
   MdError as IconStatusRejected,
 } from "react-icons/md"
 
-import TimelineCommand from "../../TimelineCommand"
+import TimelineCommand from "../../components/TimelineCommand"
+import ContentView from "../../components/ContentView"
 import { TimelineCommandProps } from "../BaseCommand"
-import ContentView from "../../ContentView"
 
 const STATUS_MAP = {
   RESOLVED: <IconStatusResolved size={18} />,

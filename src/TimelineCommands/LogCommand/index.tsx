@@ -3,9 +3,9 @@ import styled from "styled-components"
 import { MdContentCopy } from "react-icons/md"
 import stringifyObject from "stringify-object"
 
-import TimelineCommand from "../../TimelineCommand"
+import TimelineCommand from "../../components/TimelineCommand"
+import ContentView from "../../components/ContentView"
 import { TimelineCommandProps, buildTimelineCommand } from "../BaseCommand"
-import ContentView from "../../ContentView"
 
 const SOURCE_LINES_UP = 3
 const SOURCE_LINES_DOWN = 3
@@ -200,6 +200,8 @@ function getPreview(message: string | object | boolean | number) {
   } else if (message === null || typeof message === "boolean" || typeof message === "number") {
     return String(message)
   }
+
+  return message;
 }
 
 function useFileSource(stack, readFile) {
