@@ -16,9 +16,9 @@ interface Props extends TimelineCommandProps<StateValuesChangePayload> {}
 const StateValuesChangeCommand: FunctionComponent<Props> = ({ command, isOpen, setIsOpen }) => {
   const { payload, date, deltaTime } = command
 
-  const hasChanged = !!payload.changed && !Array.isArray(payload.changed)
-  const hasAdded = !!payload.added && !Array.isArray(payload.added)
-  const hasRemoved = !!payload.removed && !Array.isArray(payload.removed)
+  const hasChanged = !!payload.changed && Array.isArray(payload.changed)
+  const hasAdded = !!payload.added && Array.isArray(payload.added)
+  const hasRemoved = !!payload.removed && Array.isArray(payload.removed)
 
   const changes = []
 
@@ -38,7 +38,6 @@ const StateValuesChangeCommand: FunctionComponent<Props> = ({ command, isOpen, s
 
   // TODO: What should we do about this null junk?
   // TODO: Consider only showing the labels if more then 1 type is there?
-
   return (
     <TimelineCommand
       date={date}
@@ -48,9 +47,9 @@ const StateValuesChangeCommand: FunctionComponent<Props> = ({ command, isOpen, s
       isOpen={isOpen}
       setIsOpen={setIsOpen}
     >
-      {hasChanged && <ContentView value={{ changed: payload.changed.null }} />}
-      {hasAdded && <ContentView value={{ "+ added": payload.added.null }} />}
-      {hasRemoved && <ContentView value={{ "- removed": payload.removed.null }} />}
+      {hasChanged && <ContentView value={{ changed: payload.changed }} />}
+      {hasAdded && <ContentView value={{ "+ added": payload.added }} />}
+      {hasRemoved && <ContentView value={{ "- removed": payload.removed }} />}
     </TimelineCommand>
   )
 }
