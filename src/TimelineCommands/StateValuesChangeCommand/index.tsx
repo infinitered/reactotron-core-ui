@@ -16,9 +16,9 @@ interface Props extends TimelineCommandProps<StateValuesChangePayload> {}
 const StateValuesChangeCommand: FunctionComponent<Props> = ({ command, isOpen, setIsOpen }) => {
   const { payload, date, deltaTime } = command
 
-  const hasChanged = !!payload.changed && Array.isArray(payload.changed)
-  const hasAdded = !!payload.added && Array.isArray(payload.added)
-  const hasRemoved = !!payload.removed && Array.isArray(payload.removed)
+  const hasChanged = !!payload.changed && !Array.isArray(payload.changed)
+  const hasAdded = !!payload.added && !Array.isArray(payload.added)
+  const hasRemoved = !!payload.removed && !Array.isArray(payload.removed)
 
   const changes = []
 
