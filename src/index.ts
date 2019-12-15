@@ -18,7 +18,7 @@ import SubscriptionAddModal from "./modals/SubscriptionAddModal"
 import TimelineFilterModal from "./modals/TimelineFilterModal"
 
 // Timeline Commands
-import timelineCommandResolver from "./timelineCommands"
+import timelineCommandResolver from "./commands"
 
 // Utils
 import repairSerialization from "./utils/repair-serialization"
