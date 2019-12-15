@@ -32,6 +32,7 @@ export {
   DispatchActionModal,
   Header,
   Modal,
+  ReactotronProvider,
   SubscriptionAddModal,
   ActionButton,
   TimelineCommand,
