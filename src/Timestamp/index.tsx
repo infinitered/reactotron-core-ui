@@ -4,8 +4,6 @@ import { format } from "date-fns"
 
 const Container = styled.div`
   position: relative;
-  font-family: "Fira Code", "SF Mono", "Consolas", "Segoe UI", "Roboto", "-apple-system",
-    "Helvetica Neue", sans-serif;
 `
 const LeftDateContainer = styled.span`
   color: ${props => props.theme.highlight};
