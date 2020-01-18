@@ -3,6 +3,7 @@ import theme from "./theme"
 
 // Components
 import ContentView from "./components/ContentView"
+import EmptyState from "./components/EmptyState"
 import Header from "./components/Header"
 import Modal from "./components/Modal"
 import ReactotronProvider from "./components/ReactotronProvider"
@@ -30,6 +31,7 @@ import { CommandType } from "./types"
 export {
   theme,
   ContentView,
+  EmptyState,
   DispatchActionModal,
   Header,
   Modal,
