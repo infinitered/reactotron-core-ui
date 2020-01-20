@@ -11,4 +11,7 @@ export enum CommandType {
   StateKeysResponse = "state.keys.response",
   StateValuesChange = "state.values.change",
   StateValuesResponse = "state.values.response",
+  StateBackupResponse = "state.backup.response",
+  CustomCommandRegister = "customCommand.register",
+  CustomCommandUnregister = "customCommand.unregister",
 }
