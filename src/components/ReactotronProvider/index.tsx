@@ -7,6 +7,7 @@ const ReactotronContainer = styled.div`
   font-family: ${props => props.theme.fontFamily};
   width: 100%;
   height: 100%;
+  user-select: none;
 `
 
 const ReactotronProvider: FunctionComponent = ({ children }) => {
