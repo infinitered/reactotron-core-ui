@@ -15,6 +15,7 @@ import TreeView from "./components/TreeView"
 
 // Modals
 import DispatchActionModal from "./modals/DispatchActionModal"
+import SnapshotRenameModal from "./modals/SnapshotRenameModal"
 import SubscriptionAddModal from "./modals/SubscriptionAddModal"
 import TimelineFilterModal from "./modals/TimelineFilterModal"
 
@@ -32,15 +33,16 @@ export {
   theme,
   ContentView,
   EmptyState,
-  DispatchActionModal,
   Header,
   Modal,
   ReactotronProvider,
-  SubscriptionAddModal,
   ActionButton,
   TimelineCommand,
   timelineCommandResolver,
   TimelineCommandTabButton,
+  DispatchActionModal,
+  SnapshotRenameModal,
+  SubscriptionAddModal,
   TimelineFilterModal,
   Timestamp,
   TreeView,
