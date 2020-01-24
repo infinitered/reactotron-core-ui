@@ -21,6 +21,7 @@ const Message = styled.div`
   color: ${props => props.theme.foreground};
   max-width: 400px;
   line-height: 1.4;
+  text-align: center;
 `
 
 interface Props {
