@@ -27,6 +27,7 @@ export function buildTimelineCommand<T>(
   Component: FunctionComponent<TimelineCommandProps<T>>,
   startOpen = false
 ) {
+  // eslint-disable-next-line react/display-name
   return (props: TimelineCommandPropsEx<T>) => {
     const [isOpen, setIsOpen] = useState(startOpen)
 

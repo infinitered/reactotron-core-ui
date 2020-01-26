@@ -46,7 +46,11 @@ function renderKeys(keys: string[], currentPath: string, sendCommand: (command: 
   return (
     <KeysContainer>
       {keys.map(key => {
-        return <Key onClick={buildClickHandler(key, currentPath, sendCommand)}>{key}</Key>
+        return (
+          <Key key={key} onClick={buildClickHandler(key, currentPath, sendCommand)}>
+            {key}
+          </Key>
+        )
       })}
     </KeysContainer>
   )

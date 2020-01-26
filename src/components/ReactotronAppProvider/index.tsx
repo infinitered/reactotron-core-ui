@@ -7,9 +7,10 @@ const ReactotronContainer = styled.div`
   font-family: ${props => props.theme.fontFamily};
   width: 100%;
   height: 100%;
+  user-select: none;
 `
 
-const ReactotronProvider: FunctionComponent = ({ children }) => {
+const ReactotronAppProvider: FunctionComponent = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <ReactotronContainer>{children}</ReactotronContainer>
@@ -17,4 +18,4 @@ const ReactotronProvider: FunctionComponent = ({ children }) => {
   )
 }
 
-export default ReactotronProvider;
+export default ReactotronAppProvider;
