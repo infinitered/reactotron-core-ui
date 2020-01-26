@@ -201,7 +201,7 @@ function getPreview(message: string | object | boolean | number) {
     return String(message)
   }
 
-  return message;
+  return message
 }
 
 function useFileSource(stack, readFile) {
@@ -346,6 +346,7 @@ const LogCommand: FunctionComponent<Props> = ({
               {source.lines.map(line => {
                 return (
                   <SourceLineContainer
+                    key={`${line.source}-${line.lineNumber}`}
                     isSelected={line.isSelected}
                     onClick={() => {
                       openInEditor(source.fileName, source.lineNumber)

@@ -15,6 +15,7 @@ import TreeView from "./components/TreeView"
 
 // Contexts
 import ReactotronContext, { ReactotronProvider } from "./contexts/Reactotron"
+import CustomCommandsContext, { CustomCommandsProvider } from "./contexts/CustomCommands"
 
 // Modals
 import DispatchActionModal from "./modals/DispatchActionModal"
@@ -52,6 +53,9 @@ export {
   repairSerialization,
   filterCommands,
   CommandType,
+  // Contexts
   ReactotronContext,
   ReactotronProvider,
+  CustomCommandsContext,
+  CustomCommandsProvider,
 }
