@@ -15,3 +15,15 @@ export enum CommandType {
   CustomCommandRegister = "customCommand.register",
   CustomCommandUnregister = "customCommand.unregister",
 }
+
+export interface Command {
+  id: number
+  type: CommandType
+  connectionId: number
+  clientId?: string
+  date: Date
+  deltaTime: number
+  important: boolean
+  messageId: number
+  payload: any
+}

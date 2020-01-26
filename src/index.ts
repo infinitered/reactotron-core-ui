@@ -6,12 +6,15 @@ import ContentView from "./components/ContentView"
 import EmptyState from "./components/EmptyState"
 import Header from "./components/Header"
 import Modal from "./components/Modal"
-import ReactotronProvider from "./components/ReactotronProvider"
+import ReactotronAppProvider from "./components/ReactotronAppProvider"
 import ActionButton from "./components/ActionButton"
 import TimelineCommand from "./components/TimelineCommand"
 import TimelineCommandTabButton from "./components/TimelineCommandTabButton"
 import Timestamp from "./components/Timestamp"
 import TreeView from "./components/TreeView"
+
+// Contexts
+import ReactotronContext, { ReactotronProvider } from "./contexts/Reactotron"
 
 // Modals
 import DispatchActionModal from "./modals/DispatchActionModal"
@@ -35,7 +38,7 @@ export {
   EmptyState,
   Header,
   Modal,
-  ReactotronProvider,
+  ReactotronAppProvider,
   ActionButton,
   TimelineCommand,
   timelineCommandResolver,
@@ -49,4 +52,6 @@ export {
   repairSerialization,
   filterCommands,
   CommandType,
+  ReactotronContext,
+  ReactotronProvider,
 }

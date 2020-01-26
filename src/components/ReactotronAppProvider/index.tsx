@@ -10,7 +10,7 @@ const ReactotronContainer = styled.div`
   user-select: none;
 `
 
-const ReactotronProvider: FunctionComponent = ({ children }) => {
+const ReactotronAppProvider: FunctionComponent = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <ReactotronContainer>{children}</ReactotronContainer>
@@ -18,4 +18,4 @@ const ReactotronProvider: FunctionComponent = ({ children }) => {
   )
 }
 
-export default ReactotronProvider;
+export default ReactotronAppProvider;
