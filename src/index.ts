@@ -17,6 +17,7 @@ import TreeView from "./components/TreeView"
 import ReactotronContext, { ReactotronProvider } from "./contexts/Reactotron"
 import CustomCommandsContext, { CustomCommandsProvider } from "./contexts/CustomCommands"
 import ReactNativeContext, { ReactNativeProvider } from "./contexts/ReactNative"
+import TimelineContext, { TimelineProvider } from "./contexts/Timeline"
 
 // Modals
 import DispatchActionModal from "./modals/DispatchActionModal"
@@ -61,4 +62,6 @@ export {
   CustomCommandsProvider,
   ReactNativeContext,
   ReactNativeProvider,
+  TimelineContext,
+  TimelineProvider,
 }
