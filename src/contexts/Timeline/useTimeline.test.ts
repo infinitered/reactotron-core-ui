@@ -9,6 +9,7 @@ describe("contexts/Timline/useTimeline", () => {
     localStorage.removeItem(StorageKey.ReversedOrder)
     localStorage.removeItem(StorageKey.HiddenCommands)
   })
+
   describe("Initial Settings", () => {
     it("should default to regular order", () => {
       const { result } = renderHook(() => useTimline())
