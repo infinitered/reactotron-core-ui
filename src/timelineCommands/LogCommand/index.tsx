@@ -313,12 +313,9 @@ const LogCommand: FunctionComponent<Props> = ({
   const openInEditor = (file, lineNumber) => {
     if (file === "") return
 
-    sendCommand({
-      type: "editor.open",
-      payload: {
-        file,
-        lineNumber,
-      },
+    sendCommand("editor.open", {
+      file,
+      lineNumber,
     })
   }
 
