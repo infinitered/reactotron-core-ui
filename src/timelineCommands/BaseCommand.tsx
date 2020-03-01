@@ -13,7 +13,7 @@ export interface TimelineCommandPropsEx<T> {
   }
   copyToClipboard?: (text: string) => void
   readFile?: (path: string) => void
-  sendCommand?: (command: any) => void
+  sendCommand?: (type: string, payload: any, clientId?: string) => void
   openDispatchDialog?: (action: string) => void
   dispatchAction?: (action: any) => void
 }

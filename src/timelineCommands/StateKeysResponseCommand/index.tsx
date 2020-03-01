@@ -30,16 +30,21 @@ interface StateKeysResponsePayload {
 
 interface Props extends TimelineCommandProps<StateKeysResponsePayload> {}
 
-function buildClickHandler(key: string, currentPath: string, sendCommand: (command: any) => void) {
+function buildClickHandler(
+  key: string,
+  currentPath: string,
+  sendCommand: (type: string, payload: any, clientId?: string) => void
+) {
   return () => {
-    sendCommand({
-      type: "state.values.request",
-      payload: { path: `${currentPath ? `${currentPath}.` : ""}${key}` },
-    })
+    sendCommand("state.values.request", { path: `${currentPath ? `${currentPath}.` : ""}${key}` })
   }
 }
 
-function renderKeys(keys: string[], currentPath: string, sendCommand: (command: any) => void) {
+function renderKeys(
+  keys: string[],
+  currentPath: string,
+  sendCommand: (type: string, payload: any, clientId?: string) => void
+) {
   if (!keys) return <KeysContainer>¯\_(ツ)_/¯</KeysContainer>
   if (keys.length === 0) return <KeysContainer>Sorry, no keys in there.</KeysContainer>
 
