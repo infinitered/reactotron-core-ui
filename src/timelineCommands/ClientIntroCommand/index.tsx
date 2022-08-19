@@ -18,7 +18,7 @@ const ClientIntroCommand: FunctionComponent<Props> = ({ command, isOpen, setIsOp
       date={date}
       deltaTime={deltaTime}
       title="CONNECTION"
-      preview={payload.name}
+      preview={payload.preview}
       isOpen={isOpen}
       setIsOpen={setIsOpen}
     >
