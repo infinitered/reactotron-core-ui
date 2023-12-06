@@ -1,3 +1,6 @@
+> [!WARNING]  
+> Development has moved been out of this repository. Look for current development at https://github.com/infinitered/reactotron.
+
 # Reactotron Core UI
 
 The library for all the shared UI between different reactotron clients.
